@@ -1,0 +1,63 @@
+*{padding:0;margin:0;}
+body{
+	height: 100%;
+	width: 100%;
+	font-family: 'Nunito Sans', sans-serif;
+}
+p{
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+button, input, optgroup, select, textarea {
+  border: medium none;
+}
+
+
+
+
+
+
+#targetOuter {
+  background-color: #eee;
+  border-radius: 4px;
+  display: block;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 200px;
+}
+.btnSubmit {
+    background-color: #565656;
+    border-radius: 4px;
+    padding: 10px;
+    border: #333 1px solid;
+    color: #FFFFFF;
+    width: 225px;
+  cursor:pointer;
+}
+.inputFile {
+  background-color: #ffffff;
+  cursor: pointer;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  width: 100%;
+}
+.icon-choose-image {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#targetLayer {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+.upload-preview {
+  border-radius: 4px;
+  height: 100%;
+  max-width: 1000%;
+}

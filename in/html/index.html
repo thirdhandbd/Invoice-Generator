@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Invoice Generator</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+
+
+    <header>
+        <div class="container">
+            <div class="offset-md-1 col-md-10">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>Invoice</h1>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <label>Invoice Num.</label>
+                                <input type="text" placeholder="01" id="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <label>Date</label>
+                                <input type="text" placeholder="20/11/2018" id="datepicker">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <label>Due Date</label>
+                                <input type="text" placeholder="10/12/2018" id="datepicker-due">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <label>Bill to</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                               <textarea name="" id="input" class="form-control" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <div class="invoice-image">
+                            <img src="images/invoice.png" class="img-responsive" alt="invoice-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="content-section">
+        <div class="container">
+            <div class="offset-md-1 col-md-10">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Item Description</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                                <th>Discount %</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input id="item_name" type="text" placeholder="Item 1" size="20"></td>
+                                <td><input id="qty" type="text" placeholder="0" size="10"></td>
+                                <td><input id="price" type="text" placeholder="0.00" size="15"></td>
+                                <td><input id="discount" type="text" placeholder="0" size="15"></td>
+                                <td><input id="subtotal" type="text" placeholder="0.00" size="15"></td>
+                            </tr>
+                        </tbody>
+                        <tbody id="trMore">
+                    </table>
+                </div>
+
+                <div class="new-line">
+                    <button class="btn btn-primary btn-sm" onclick="return new_line();">New Line</button>
+                </div>
+
+                <div class="invoice-sub-total text-right">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label>Subtotal</label>
+                            <input type="text" placeholder="0.00">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label>Tax %</label>
+                            <input type="text" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label>Total KRW</label>
+                            <input type="text" placeholder="0.00">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="incove-notes">
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <label>Notes</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                           <textarea name="" rows="2" id="input" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="invoice-submit text-center">
+                    <button class="btn btn-success" onclick="return invoice_submit()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/tether.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+  </body>
+</html>

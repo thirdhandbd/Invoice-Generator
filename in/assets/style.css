@@ -1,0 +1,121 @@
+*{padding: 0;margin: 0;}
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@font-face {
+  font-family: 'Quicksand', sans-serif;
+}
+
+body{
+	height: 842px;
+	width: 700px; /*595px,color:#516FBD;*/
+	margin: 0 auto;
+	padding: 10px;
+	font-family: 'Quicksand', sans-serif;
+  	font-size: 12px;
+}
+p{font-size: 12px;}
+
+
+h1,h2,h3,h4,h5,h6{text-transform: uppercase;}
+.header {
+  display: block;
+  height: 220px;
+  margin-top: 40px;
+}
+.container {
+  margin-top: 30px;
+  position: relative;
+}
+/*LEFT HEADER STYLE*/
+.left-header {
+  width: 50%;
+  float: left;
+}
+.left-header > h2 {
+  background: #516fbd none repeat scroll 0 0;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 18px;
+  padding: 5px 120px 5px 10px;
+}
+.left-header > ul {
+  list-style: outside none none;
+  margin: 5px 0 15px;
+}
+.left-header > ul > li {
+  line-height: 18px;
+}
+.left-header > ul > li > .left {
+  width: 80px;
+  display: inline-block;
+}
+.left-header > ul > li > .right {
+  display: inline-block;
+  text-align: right;
+  width: 118px;
+}
+.bill-to {
+  width: 200px;
+}
+
+
+
+/*LEFT HEADER STYLE*/
+.right-header {
+  float: left;
+  text-align: right;
+  width: 40%;
+}
+.right-header>img{
+	height: 150px;
+	width: 150px;
+}
+
+
+
+/*TABLE*/
+.item-table {
+  min-height: 250px;
+}
+.table {
+  width: 100%;
+}
+.table thead {
+  color: #fff;
+  padding: 5px 120px 5px 10px;
+  background: #516fbd none repeat scroll 0 0;
+}
+.table th {
+  padding: 10px 0;
+  text-align: center;
+}
+.table td {
+  padding: 10px;
+  text-align: center;
+}
+.subtotal {
+  height: 100px;
+  width: 100%;
+  margin-top: 20px;
+}
+.Subtotal-table {
+  float: right;
+  width: 40%;
+}
+
+.Subtotal-table th {
+  font-size: 14px;
+  padding: 3px;
+}
+.notes{}
+.notes p > strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.notes p{}
+.powered {
+  display: block;
+  float: right;
+  margin-right: 30px;
+  margin-top: 100px;
+}
