@@ -143,8 +143,8 @@ header {
 }
 .invoice-submit button {
   background: #415fad none repeat scroll 0 0;
-  border-radius: 0;
   color: #ffffff;
+  margin-right: 10px;
 }
 
 
