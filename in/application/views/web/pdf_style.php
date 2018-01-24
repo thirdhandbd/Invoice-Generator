@@ -38,7 +38,7 @@
 		</div>
 		<div class="right-header">
 			<?php if (!empty($data->userfile)) { ?>
-			<img src="file:///D:/xampp/htdocs/in/assets/images/<?php echo $data->userfile; ?>" />
+			<img src="<?php echo base_url(); ?>/assets/images/<?php echo $data->userfile; ?>" />
 			<?php } ?>
 		</div>
 

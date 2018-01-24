@@ -151,7 +151,9 @@ header {
 .note-class {
   width: 100%;
   background: #f2f2f2;
+  height: 65px;
 }
-
-.for-delete-td{}
-
+.invoice-submit a {
+  background: #dddddd none repeat scroll 0 0;
+  color: #333333;
+}

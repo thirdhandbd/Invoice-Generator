@@ -157,7 +157,7 @@
                         </div>
                     </div>
 
-                    <div class="incove-notes">
+                    <div class="invoice-notes">
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group" style="margin: 5px 0">
@@ -171,6 +171,7 @@
                             <div class="col-md-4">
                                 <div class="invoice-submit text-right">
                                     <button class="btn btn-default" type="submit">Create Invoice</button>
+                                    <a href="https://thirdhandbd.com/" class="btn btn-default">Back to Home</button>
                                 </div>
                             </div>
                         </div>
