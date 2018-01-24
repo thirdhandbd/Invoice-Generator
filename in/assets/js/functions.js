@@ -1,4 +1,6 @@
-var li="http://localhost/in/";
+
+//var li="http://localhost/in/";
+var li="https://thirdhandbd.com/invoice-generator/";
 
 $(function(){
 	$("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
@@ -27,11 +29,14 @@ function new_line(value){
 
       		var new_line = 
 			'<tr id="item'+id+'">'+
-				'<td><input type="text" size="20" id="item_name'+id+'" data-id="'+id+'" placeholder="Item name" value="'+item_name+'" /></td>'+
+				'<td><input type="text" size="25" id="item_name'+id+'" data-id="'+id+'" placeholder="Item name" value="'+item_name+'" /></td>'+
 				'<td><input type="text" size="10" id="qty'+id+'" data-id="'+id+'" onblur="qty(this)" value="'+qty+'" /></td>'+
-				'<td><input type="text" size="15" id="price'+id+'" data-id="'+id+'"onblur="price(this)" value="'+price+'" /></td>'+
-				'<td><input type="text" size="15" id="discount'+id+'" data-id="'+id+'"onblur="discount(this)" value="'+discount+'" /></td>'+
-				'<td><input type="text" size="15" id="subtotal'+id+'" data-id="'+id+'" value="'+subtotal+'" /></td>'
+				'<td><input type="text" size="10" id="price'+id+'" data-id="'+id+'"onblur="price(this)" value="'+price+'" /></td>'+
+				'<td><input type="text" size="10" id="discount'+id+'" data-id="'+id+'"onblur="discount(this)" value="'+discount+'" /></td>'+
+				'<td><input type="text" size="10" id="subtotal'+id+'" data-id="'+id+'" value="'+subtotal+'" /></td>'+
+				'<td class="for-delete-td">'+
+                    '<button class="btn btn-sm btn-default" value="'+id+'" onclick="return delete_items(this);" type="button">x</button>'+
+                '</td>'+
 			+'</tr>';
 
 			$("#trMore").append(new_line);
@@ -183,3 +188,24 @@ function showPreview(objFileInput) {
     	alert('sohel');
     }
 } //click to uploaded image on browser
+
+
+
+function delete_items(value){
+	var id = $(value).val().trim();
+	$.ajax({
+      type: 'POST',
+      url:li+'home/delete_items/',
+      data:{id:id},
+      dataType:'json',
+      success: function(data){
+      	if (data.return==1) {
+      		$("#item"+id).fadeOut(); //all total
+      		$("#total").val(data.total); //all total
+      	}
+      },
+      error: function(){
+        alert('Error add items!');
+      }
+    });
+}

@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Invoice</title>
+	<title>Invoice no <?php echo $data->invoice_no; ?></title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
 </head>
@@ -66,6 +66,8 @@
 	                    $qty = $value['qty'];
 	                    $discount = $value['discount'];
 	                    $subtotal = $value['subtotal'];
+
+	                    if (!empty($subtotal)) {
 	                ?>
 					<tr>
 						<td style="text-align: left;padding-left: 15px"><?php echo $item_name; ?></td>
@@ -74,7 +76,7 @@
 						<td><?php echo $discount; ?></td>
 						<td><?php echo $subtotal; ?></td>
 					</tr>
-					<?php } ?>
+					<?php }} ?>
 				</tbody>
 			</table>
 		</div>

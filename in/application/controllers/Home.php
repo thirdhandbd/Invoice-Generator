@@ -14,6 +14,37 @@ class Home extends CI_Controller {
 	}
 	public function index(){
 
+		$all_query = $this->db->get('invoice');
+		if ($all_query->num_rows()>0) {
+		    foreach ($all_query->result_array() as $dData) {
+
+		        if ($dData['alerts'] == 1) {
+		            $this->db->where('invoice_id',$dData['id']);
+		            $this->db->delete('items');
+
+		            if ($dData['userfile'] !='') {		            	
+        				unlink('./assets/images/'.$dData['userfile']);
+		            } // FOR AVAILABLE IMAGES DELETED
+
+		            $this->db->where('id',$dData['id']);
+		        	$this->db->delete('invoice');            
+		        } //SUCCESSFULLY INVOICE DELETE
+
+		        $now = strtotime($dData['added_date']);
+		        $plus1hour = $now+60*60;
+
+		        if ($now>$plus1hour) {
+		        	$this->db->where('invoice_id',$dData['id']);
+		            $this->db->delete('items');
+
+		            $this->db->where('id',$dData['id']);
+		        	$this->db->delete('invoice');
+		        } //BOUNCED USER DATA DELETE
+
+		    }
+		} //DELETED INVOICE DATA
+
+
 		$session_id = session_id();
 
 		$this->db->where('invoice_session',$session_id);
@@ -83,6 +114,26 @@ class Home extends CI_Controller {
 		echo json_encode($total);
 	}
 
+	public function delete_items(){
+		$session_id = session_id();
+		$id = $this->input->post('id');
+		
+		$this->db->where('id',$id);
+		$this->db->where('user_session',$session_id);
+		$query = $this->db->delete('items');
+
+		$this->db->where('user_session',$session_id);
+		$this->db->select_sum("subtotal");
+		$subtotal_query = $this->db->get("items");
+		if ($subtotal_query->num_rows()>0) {
+		  $get_total = $subtotal_query->row()->subtotal;
+		  $total['total'] = number_format($get_total,2);
+		}
+		$total['return'] = 1;
+
+		echo json_encode($total);
+	}
+
 	// PDF CREATOR METHOD
 	function pdf(){
 	    $this->load->library('pdfgenerator');
@@ -120,8 +171,7 @@ class Home extends CI_Controller {
         $notes = $this->input->post('notes');
 
         if ($this->form_validation->run()==false) {
-           // $this->index();
-        	redirect('http://www.bdsohel.com');
+            $this->index();
         }else{
 
             $update=array(
@@ -132,6 +182,7 @@ class Home extends CI_Controller {
                 'sub_total' => $sub_total,
                 'tax' => $tax,
                 'total_krw' => $total_krw,
+                'alerts' => 1,
                 'notes' => $notes
             );
             $this->db->where('invoice_session',$session_id);
