@@ -106,8 +106,8 @@ class Home extends CI_Controller {
 		$this->db->select_sum("subtotal");
 		$subtotal_query = $this->db->get("items");
 		if ($subtotal_query->num_rows()>0) {
-		  $get_total = $subtotal_query->row()->subtotal;
-		  $total['total'] = number_format($get_total,2);
+		  $total['total'] = $subtotal_query->row()->subtotal;
+		  //$total['total'] = number_format($get_total,2);
 		}
 		$total['return'] = 1;
 

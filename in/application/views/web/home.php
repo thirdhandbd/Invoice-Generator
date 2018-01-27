@@ -40,9 +40,9 @@
     <form action="<?php echo base_url(); ?>home/create_pdf" method="POST" enctype="multipart/form-data">
         <header>
             <div class="container">
-                <div class="offset-md-1 col-md-10">
+                <div class="offset-md-1 col-md-10 col-sm-12">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <div class="left-header">
                                 <h1>Invoice</h1>
                                 <div class="form-group">
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <div class="image-layout">
                                 <div id="targetOuter">
                                     <div id="targetLayer"></div>
@@ -82,7 +82,7 @@
         </header>
         <section class="content-section">
             <div class="container">
-                <div class="offset-md-1 col-md-10">
+                <div class="offset-md-1 col-md-10 col-sm-12">
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -151,7 +151,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <label>Total KRW</label>
+                                <label>Total Amount</label>
                                 <input type="text" name="total_krw" placeholder="0.00" id="total-krw">
                             </div>
                         </div>
@@ -159,7 +159,7 @@
 
                     <div class="invoice-notes">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-8 col-sm-12">
                                 <div class="form-group" style="margin: 5px 0">
                                     <label><strong>Notes</strong></label>
                                 </div>
@@ -168,10 +168,10 @@
                                    <textarea name="notes" rows="2" id="input" class="note-class" rows="3"></textarea>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-sm-12">
                                 <div class="invoice-submit text-right">
                                     <button class="btn btn-default" type="submit">Create Invoice</button>
-                                    <a href="https://thirdhandbd.com/" class="btn btn-default">Back to Home</button>
+                                    <a href="https://thirdhandbd.com/" class="btn btn-default">Back to Home</a>
                                 </div>
                             </div>
                         </div>
