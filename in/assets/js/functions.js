@@ -1,6 +1,4 @@
-
-//var li="http://localhost/in/";
-var li="https://thirdhandbd.com/invoice-generator/";
+var li="https://thirdhandbd/invoice-generator/";
 
 $(function(){
 	$("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
